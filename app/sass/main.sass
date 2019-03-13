@@ -1,0 +1,495 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+h2
+	font-size: 3.2rem
+	font-weight: bold
+	color: #6f6f6f
+	text-transform: uppercase
+	margin: 0
+	padding: 0
+	line-height: 1.2
+
+h3
+	font-size: 1.5rem
+
+/*Header: Main head*/	
+
+header
+	background-image: url(../img/bg_img.png)
+	background-position: top center
+	background-repeat: no-repeat
+	background-color: #dedede
+	padding-top: 2em
+	height: 720px
+
+.main-logo
+	max-width: 70%
+
+.main-nv
+	min-width: 450px
+	
+.top-mnu
+	flex-basis: 100%
+	ul
+		padding: 0
+		margin: 0
+		display: flex
+		justify-content: space-between
+		li	
+			display: inline-flex
+			a
+				color: $text
+				text-transform: uppercase
+		li:hover
+			a
+				text-transform: capitalize
+				text-decoration: none
+				border-bottom: solid 2px #878787
+
+.btn-toggle //work on media <768px for mobile phone
+	span
+		max-width: 28px
+
+#toggle span:after,
+#toggle span:before 
+  content: ""
+  position: absolute
+  left: 0
+  top: -9px
+
+#toggle span:after
+  top: 9px
+
+#toggle span 
+  position: relative
+  display: block
+
+
+#toggle span,
+#toggle span:after,
+#toggle span:before 
+  width: 100%
+  height: 5px
+  background-color: #888
+  transition: all 0.3s
+  backface-visibility: hidden
+  border-radius: 2px
+
+
+#toggle.on span 
+  background-color: transparent
+
+#toggle.on span:before 
+  transform: rotate(45deg) translate(5px, 5px)
+
+#toggle.on span:after 
+  transform: rotate(-45deg) translate(7px, -8px)
+
+
+.hello-btns
+	padding-top: 12em
+
+.luis-inf
+	line-height: 1.15
+	margin: 0
+	padding: 0
+	p
+		font-size: 1.2rem
+		color: #909090
+		font-weight: bold
+	h1
+		font-size: 4rem
+.btn-inf
+	display: flex
+	align-items: center
+	max-width: 345px
+	justify-content: space-between
+	div:hover
+		transition: 0.25s
+		background: white
+		border-color: white
+	div
+		width: 160px
+		border: solid 1px
+		border-color: #4d4d4d
+		text-align: center
+		padding: 1em 0.3em
+		
+		a
+			color: #4d4d4d
+			font-size: 1rem
+			font-weight: 500
+			text-transform: uppercase
+			padding: 0.5em
+			text-decoration: none
+
+/*Section 1: Know More About Me*/
+
+#about
+	padding: 5em 0
+	background-color: #ffffff
+
+.about-me
+	span
+		width: 60px
+		border: solid 2px
+		border-color: #717171
+		display: block
+		margin-bottom: 0.5em
+		
+	p
+		margin: 0
+		line-height: 1.5
+		padding-bottom: 2em
+	a
+		color: #4d4d4d
+		font-size: 1.1rem
+		font-weight: bold
+		text-transform: uppercase
+		padding: 0.5em
+		text-decoration: none
+		border: solid 1px
+		border-color: #4d4d4d
+		padding: 1em 2em
+	a:hover
+		background-color: #4d4d4d
+		color: #fff
+		transition: 0.25s
+
+.my-photo
+	text-align: right
+	img
+		max-width: 570px
+		width: 100%
+
+/*Section 2: Services*/
+
+#service
+	background-color: #f6f6f6
+	padding: 8em 0
+
+.title-main
+	text-align: center
+	justify-content: center
+	span
+		width: 60px
+		border: solid 2px
+		border-color: #717171
+		display: block
+		margin-bottom: 0.5em
+		margin: auto
+
+.icons
+	div
+		padding-top: 4em
+		justify-content: center
+		text-align: center
+		img
+			display: block
+			margin: auto
+
+
+/*Section 3: Skill */
+#skill
+	padding: 7em 0
+	.skls-tittle
+		padding-bottom: 4em
+
+#myChart
+	background-color: #f6f6f6
+
+.icons-skls
+	padding: 0
+	display: flex
+	.xd
+		flex-basis: 23%
+		text-align: left
+	.ae
+		flex-basis: 27%
+	.ps
+		flex-basis: 38%	
+	.ai
+		flex-basis: 12%
+		text-align: right
+
+/*Section 4: Portfolio*/
+
+#portfolio
+	background-color: #f6f6f6
+	padding: 7em 0
+
+.gallery
+	padding: 3em 0
+	.imgs
+		width: 30%
+		max-width: 369px
+		max-height: 318px
+		margin-bottom: 1em
+		padding: 0
+		display: inline-flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: center
+		img
+			width: 100%
+
+.hiddeninfo 
+	display: none
+	position: absolute
+	color: #f8f8f8
+	text-align: center
+	a 
+		text-decoration: none
+		text-transform: uppercase
+		font-size: 2rem
+		padding: 0.1em 0.5em 0.2em 0.5em
+		border: 1px solid #f8f8f8
+		color: #333333
+		background: #f8f8f8
+
+.imgs:hover
+	background: #212121
+	transition: 0.5s
+	img 
+		opacity: 0.5
+	.hiddeninfo 
+		display: block
+		margin: 0 auto
+		align-self: center
+	
+.btn-load
+	margin: 0 auto
+	text-align: center
+	a
+		color: #4d4d4d
+		font-size: 1.1rem
+		font-weight: bold
+		text-transform: uppercase
+		padding: 0.5em
+		text-decoration: none
+		border: solid 1px
+		border-color: #4d4d4d
+		padding: 1em 2em
+	a:hover
+		background-color: #4d4d4d
+		color: #fff
+		transition: 0.25s
+
+/*Section 5: Testimonials*/
+
+#testimonials
+	padding: 7em 0	
+	
+.test-info
+	border: solid 1px
+	border-color: black
+
+.title-main
+	padding-bottom: 3em
+
+.testim
+	display: flex
+	justify-content: center
+	padding: 3em
+	.testim-photo
+		flex-basis: 30%
+		text-align: right
+		padding: 1em
+	.testim-info
+		flex-basis: 70%
+		padding: 1em
+		h3
+			text-transform: uppercase
+			font-size: 1.5rem
+			margin: 0
+			padding: 0
+			line-height: 1
+		h4
+			text-transform: uppercase
+			font-size: 0.7rem
+			font-style: italic
+			margin: 0
+			padding: 0
+		p
+			text-transform: uppercase
+			font-size: 1rem
+			color: #7a7a7a
+			padding-top: 1em
+
+.carousel-indicators
+	position: relative
+	padding-top: 2em
+	li 
+		display: inline-block
+		width: 13px
+		height: 13px
+		margin: 1px
+		text-indent: -999px
+		cursor: pointer
+		background-color: #fff
+		border: 1px solid #212121
+		margin: 0 0.2em 0 0.2em
+	
+.carousel-indicators .active 
+	background: #212121
+	border-color: #212121
+
+/*Section 6: Mini-info*/
+
+#mini-info
+	background-color: #f6f6f6
+	padding: 5em 0
+
+.mini-info
+	text-align: center
+	h3
+		padding-top: 1em
+		margin: 0
+		line-height: 1
+		text-transform: uppercase
+		font-size: 1.5rem
+	h4
+		padding: 0
+		margin: 0
+		font-size: 1.5rem
+		text-transform: uppercase
+		font-weight: lighter
+
+/*Section 7: Say Hello!*/
+
+#hello
+	background-image: url(../img/contact_bg.png)
+	background-position: top center
+	background-repeat: no-repeat
+	background-size: cover
+	padding: 5em 0
+	hr
+		color: #fff
+		margin-top: 3em
+
+.hello
+	padding-top: 2em
+	span
+		border-color: #c1c1c1
+	h2
+		color: #f0f0f0
+
+#yourname, //form section
+#ur-email,
+#comment
+	width: 100%
+	max-width: 370px
+	padding: 1em
+	border: 0
+#comment
+	margin-top: 2em
+	max-width: 769px
+
+.send-btn
+	text-align: center
+	margin-top: 1.5em
+	button
+		font-size: 1.2rem
+		text-transform: uppercase
+		font-family: $default-font
+		font-weight: bold
+		color: #595959
+		padding: 0.7em 1.5em
+		border: 0
+		background-color: #fff
+		img
+			margin-bottom: 0.1em
+
+.footer-info	//footer section
+	text-align: center
+	color: #f6f6f6
+	font-weight: bold
+	margin-top: 0.5em
+
+.footer-icon
+	display: flex
+	a
+		display: inline-flex
+		width: 27px
+		height: 27px
+		background-color: #fff
+		margin: 0.5em
+		justify-content: center
+		align-items: center
+		svg
+			height: 15px
+			fill: #4d4d4d
+
+
+
+.icon-1:hover
+	background-color: #3a559f
+	svg
+		fill: #ffffff
+
+.icon-2:hover
+	background-color: #50abf1
+	svg
+		fill: #ffffff
+
+.icon-3:hover
+	background-color: #0084b1
+	svg
+		fill: #ffffff
+
+.icon-4:hover
+	background-color: #dd4b39
+	svg
+		fill: #ffffff
+
+.icon-5:hover
+	background-color: #0071b9
+	svg
+		fill: #ffffff
+
+.icon-6:hover
+	background-color: #ed4989
+	svg
+		fill: #ffffff
+
+
+
+@import "media" // Always at the end

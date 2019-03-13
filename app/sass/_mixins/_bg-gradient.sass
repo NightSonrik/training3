@@ -1,0 +1,4 @@
+@mixin linear-gradient($direction, $fromColor, $toColor)
+  background-color: $toColor /* Fallback Color */
+  background-image:         repeating-linear-gradient($direction, $fromColor, $toColor)
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}')
